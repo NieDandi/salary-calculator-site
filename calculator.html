@@ -99,59 +99,80 @@ function calculate() {
         "Monthly Take Home: $" + monthly.toFixed(2);
 }
 
+<script>
+const stateData = {
+  california: {
+    name: "California",
+    description: "Use our California salary after tax calculator to estimate your take-home pay.",
+    taxInfo: "California has a progressive state income tax ranging from 1% to over 12%.",
+    faq1: "Yes, California has one of the highest state income tax rates in the U.S.",
+    faq2: "Yes, California is considered a high-tax state."
+  },
+  texas: {
+    name: "Texas",
+    description: "Use our Texas salary after tax calculator to estimate your take-home pay.",
+    taxInfo: "Texas does not have state income tax.",
+    faq1: "No, Texas does not have state income tax.",
+    faq2: "No, Texas is considered a tax-friendly state."
+  },
+  florida: {
+    name: "Florida",
+    description: "Use our Florida salary after tax calculator to estimate your take-home pay.",
+    taxInfo: "Florida does not charge state income tax.",
+    faq1: "No, Florida does not have state income tax.",
+    faq2: "No, Florida is considered a tax-friendly state."
+  }
+};
+
+const path = window.location.pathname;
+const state = path.split("-")[0].replace("/", "");
+
+if (stateData[state]) {
+  const data = stateData[state];
+
+  document.getElementById("seo-title").innerText =
+    `${data.name} Salary After Tax Calculator (2026 Guide)`;
+
+  document.getElementById("seo-description").innerText =
+    data.description;
+
+  document.getElementById("seo-state-name").innerText =
+    data.name;
+
+  document.getElementById("seo-tax-info").innerText =
+    data.taxInfo;
+
+  document.getElementById("faq-state-name").innerText =
+    data.name;
+
+  document.getElementById("faq-state-name-2").innerText =
+    data.name;
+
+  document.getElementById("faq-answer-1").innerText =
+    data.faq1;
+
+  document.getElementById("faq-answer-2").innerText =
+    data.faq2;
+}
 </script>
+    
 
 </body>
 </html>
 <section>
-<h2>California Salary After Tax Calculator (2026 Guide)</h2>
+  <h2 id="seo-title"></h2>
 
-<p>
-Use our California salary after tax calculator to estimate your annual take-home pay. 
-California has one of the highest state income tax rates in the United States, 
-with a progressive tax system ranging from 1% to over 12%.
-</p>
+  <p id="seo-description"></p>
 
-<h3>How Income Tax Works in California</h3>
+  <h3>How Income Tax Works in <span id="seo-state-name"></span></h3>
 
-<p>
-In addition to federal income tax, California residents pay state income tax. 
-The rate increases based on your taxable income. High earners may also be subject 
-to additional surcharges.
-</p>
+  <p id="seo-tax-info"></p>
 
-<h3>Example: $50,000 Salary in California</h3>
+  <h3>Frequently Asked Questions</h3>
 
-<p>
-If you earn $50,000 per year in California and file as Single:
-</p>
+  <h4>Does <span id="faq-state-name"></span> have state income tax?</h4>
+  <p id="faq-answer-1"></p>
 
-<ul>
-<li>Federal tax will apply based on IRS brackets</li>
-<li>California state tax will be deducted</li>
-<li>Social Security and Medicare (FICA) are also deducted</li>
-</ul>
-
-<p>
-Your estimated take-home pay may be approximately $38,000–$40,000 depending on deductions.
-</p>
-
-<h3>Example: $100,000 Salary in California</h3>
-
-<p>
-For a $100,000 annual salary, total combined federal and state tax can exceed 30%. 
-California’s progressive tax structure significantly impacts higher income earners.
-</p>
-
-<h3>Frequently Asked Questions</h3>
-
-<h4>Does California have state income tax?</h4>
-<p>Yes, California has one of the highest state income tax rates in the U.S.</p>
-
-<h4>Is California a high-tax state?</h4>
-<p>Yes, compared to states like Texas or Florida, California has significantly higher state taxes.</p>
-
-<h4>How much tax do I pay on $100k in California?</h4>
-<p>Total tax can range between 28%–35% depending on filing status and deductions.</p>
-
+  <h4>Is <span id="faq-state-name-2"></span> a high-tax state?</h4>
+  <p id="faq-answer-2"></p>
 </section>
