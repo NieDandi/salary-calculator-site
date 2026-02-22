@@ -1,105 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>California Salary After Tax Calculator (2026) | Take Home Pay Estimate</title>
-<meta name="description" content="Calculate your California take-home pay after federal and state taxes. Estimate net salary for $50k, $80k, $100k income instantly. Updated for 2026.">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title id="pageTitle">Salary Calculator</title>
-<meta name="description" id="metaDescription" content="Salary calculator">
+<title>Salary After Tax Calculator (2026)</title>
+<meta name="description" content="Calculate your salary after tax instantly. Federal and state income tax estimate for 2026.">
 
 <style>
-body { font-family: Arial; max-width: 600px; margin: 40px auto; padding: 20px; }
-input, select, button { padding: 8px; margin: 5px 0; width: 100%; }
-.result { margin-top: 20px; font-weight: bold; }
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+input, button {
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
 </style>
 </head>
+
 <body>
 
-<h1 id="pageHeading">State Salary Calculator</h1>
+<h1 id="main-title">Salary After Tax Calculator</h1>
 
-<label>Annual Salary ($)</label>
-<input type="number" id="salary" placeholder="50000">
+<form id="salary-form">
+  <label>Annual Salary ($)</label>
+  <input type="number" id="salary" placeholder="Enter your salary" required>
+  <button type="submit">Calculate</button>
+</form>
 
-<label>Filing Status</label>
-<select id="status">
-<option value="single">Single</option>
-<option value="married">Married</option>
-</select>
+<h2 id="result"></h2>
 
-<button onclick="calculate()">Calculate</button>
+<hr>
 
-<div class="result" id="output"></div>
+<!-- SEO 内容区域 -->
+<section>
+  <h2 id="seo-title"></h2>
 
-<script>
+  <p id="seo-description"></p>
 
-// ===== 州数据表 =====
-const states = {
-    texas: { name: "Texas", stateTax: 0 },
-    florida: { name: "Florida", stateTax: 0 },
-    nevada: { name: "Nevada", stateTax: 0 },
-    tennessee: { name: "Tennessee", stateTax: 0 },
-    california: { name: "California", stateTax: 0.05 },
-    newyork: { name: "New York", stateTax: 0.06 }
-};
+  <h3>How Income Tax Works in <span id="seo-state-name"></span></h3>
+  <p id="seo-tax-info"></p>
 
-// ===== 读取URL参数 =====
-// ===== 从URL路径读取州名 =====
-let path = window.location.pathname.toLowerCase();
+  <h3>Frequently Asked Questions</h3>
 
-// 例如: /california-salary-after-tax-calculator
-let stateKey = path
-  .replace("/", "")
-  .replace("-salary-after-tax-calculator", "")
-  .replace(".html", "");
+  <h4>Does <span id="faq-state-name"></span> have state income tax?</h4>
+  <p id="faq-answer-1"></p>
 
-
-if (states[stateKey]) {
-    const stateData = states[stateKey];
-
-    document.getElementById("pageTitle").innerText =
-        stateData.name + " Salary After Tax Calculator 2026";
-
-    document.getElementById("pageHeading").innerText =
-        stateData.name + " Salary After Tax Calculator";
-
-    document.getElementById("metaDescription").setAttribute(
-        "content",
-        "Use this " + stateData.name + " Salary After Tax Calculator to estimate your take-home pay in 2026."
-    );
-} else {
-    document.getElementById("pageHeading").innerText =
-        "US Salary Calculator";
-}
-
-// ===== 计算逻辑 =====
-function calculate() {
-    let salary = parseFloat(document.getElementById("salary").value);
-    let status = document.getElementById("status").value;
-
-    if (!salary) {
-        document.getElementById("output").innerHTML = "Please enter a salary.";
-        return;
-    }
-
-    let federalTaxRate = status === "single" ? 0.22 : 0.18;
-    let federalTax = salary * federalTaxRate;
-
-    let stateRate = states[stateKey] ? states[stateKey].stateTax : 0;
-    let stateTax = salary * stateRate;
-
-    let net = salary - federalTax - stateTax;
-    let monthly = net / 12;
-
-    document.getElementById("output").innerHTML =
-        "Federal Tax: $" + federalTax.toFixed(2) + "<br>" +
-        "State Tax: $" + stateTax.toFixed(2) + "<br>" +
-        "Net Annual Pay: $" + net.toFixed(2) + "<br>" +
-        "Monthly Take Home: $" + monthly.toFixed(2);
-}
+  <h4>Is <span id="faq-state-name-2"></span> a high-tax state?</h4>
+  <p id="faq-answer-2"></p>
+</section>
 
 <script>
+
+/* ==========================
+   简单计算逻辑（示例）
+   ========================== */
+
+document.getElementById("salary-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  
+  const salary = parseFloat(document.getElementById("salary").value);
+  
+  if (!salary) return;
+
+  // 简单示例：假设总税率25%
+  const takeHome = salary * 0.75;
+
+  document.getElementById("result").innerText =
+    "Estimated Take Home Pay: $" + takeHome.toLocaleString();
+});
+
+
+/* ==========================
+   州数据自动切换
+   ========================== */
+
 const stateData = {
   california: {
     name: "California",
@@ -125,10 +110,15 @@ const stateData = {
 };
 
 const path = window.location.pathname;
-const state = path.split("-")[0].replace("/", "");
+const stateKey = path.split("-")[0].replace("/", "");
 
-if (stateData[state]) {
-  const data = stateData[state];
+if (stateData[stateKey]) {
+  const data = stateData[stateKey];
+
+  document.title = `${data.name} Salary After Tax Calculator (2026)`;
+
+  document.getElementById("main-title").innerText =
+    `${data.name} Salary After Tax Calculator`;
 
   document.getElementById("seo-title").innerText =
     `${data.name} Salary After Tax Calculator (2026 Guide)`;
@@ -154,25 +144,8 @@ if (stateData[state]) {
   document.getElementById("faq-answer-2").innerText =
     data.faq2;
 }
+
 </script>
-    
 
 </body>
 </html>
-<section>
-  <h2 id="seo-title"></h2>
-
-  <p id="seo-description"></p>
-
-  <h3>How Income Tax Works in <span id="seo-state-name"></span></h3>
-
-  <p id="seo-tax-info"></p>
-
-  <h3>Frequently Asked Questions</h3>
-
-  <h4>Does <span id="faq-state-name"></span> have state income tax?</h4>
-  <p id="faq-answer-1"></p>
-
-  <h4>Is <span id="faq-state-name-2"></span> a high-tax state?</h4>
-  <p id="faq-answer-2"></p>
-</section>
