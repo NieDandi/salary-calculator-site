@@ -2,15 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>https://你的域名/</loc>
+<loc>https://salary-calculator-site-liart.vercel.app/</loc>
 </url>
 
 <url>
-<loc>https://你的域名/california-salary-after-tax-calculator</loc>
+<loc>https://salary-calculator-site-liart.vercel.app/california-salary-after-tax-calculator</loc>
 </url>
 
 <url>
-<loc>https://你的域名/texas-salary-after-tax-calculator</loc>
+<loc>https://salary-calculator-site-liart.vercel.app/texas-salary-after-tax-calculator</loc>
+</url>
+
+<url>
+<loc>https://salary-calculator-site-liart.vercel.app/florida-salary-after-tax-calculator</loc>
 </url>
 
 </urlset>
