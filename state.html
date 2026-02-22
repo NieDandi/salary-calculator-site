@@ -43,8 +43,15 @@ const states = {
 };
 
 // ===== 读取URL参数 =====
-const params = new URLSearchParams(window.location.search);
-const stateKey = params.get("state");
+// ===== 从URL路径读取州名 =====
+let path = window.location.pathname.toLowerCase();
+
+// 例如: /california-salary-after-tax-calculator
+let stateKey = path
+  .replace("/", "")
+  .replace("-salary-after-tax-calculator", "")
+  .replace(".html", "");
+
 
 if (states[stateKey]) {
     const stateData = states[stateKey];
