@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>US Salary After Tax Calculator (2026) – Estimate Your Take Home Pay</title>
+
+<meta name="description" content="Use this free US Salary After Tax Calculator to estimate your federal tax, state tax, and monthly take-home pay in 2026. Simple and fast income tax estimator.">
+
+<meta name="keywords" content="salary after tax calculator, take home pay calculator, US income tax calculator 2026">
+
+<style>
+body { font-family: Arial; max-width: 600px; margin: 40px auto; padding: 20px; }
+input, select, button { padding: 8px; margin: 5px 0; width: 100%; }
+.result { margin-top: 20px; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h1>US Salary After Tax Calculator</h1>
+
+<label>Annual Salary ($)</label>
+<input type="number" id="salary" placeholder="50000">
+
+<label>Filing Status</label>
+<select id="status">
+<option value="single">Single</option>
+<option value="married">Married</option>
+</select>
+
+<button onclick="calculate()">Calculate</button>
+<h2>How This Salary After Tax Calculator Works</h2>
+
+<p>
+This US Salary After Tax Calculator provides a simplified estimate of your annual take-home pay after federal and state taxes.
+The calculator applies an average federal tax rate based on filing status and an estimated state tax rate.
+</p>
+
+<p>
+For more accurate tax calculations, always consult official IRS tax brackets or a certified tax professional.
+This tool is designed for quick estimation purposes only.
+</p>
+<div class="result" id="output"></div>
+
+<script>
+function calculate() {
+    let salary = parseFloat(document.getElementById("salary").value);
+    let status = document.getElementById("status").value;
+
+    if (!salary) {
+        document.getElementById("output").innerHTML = "Please enter a salary.";
+        return;
+    }
+
+    // Simplified federal tax estimate
+    let federalTaxRate = status === "single" ? 0.22 : 0.18;
+    let federalTax = salary * federalTaxRate;
+
+    // Estimated state average 5%
+    let stateTax = salary * 0.05;
+
+    let net = salary - federalTax - stateTax;
+    let monthly = net / 12;
+
+    document.getElementById("output").innerHTML =
+        "Federal Tax: $" + federalTax.toFixed(2) + "<br>" +
+        "State Tax (est): $" + stateTax.toFixed(2) + "<br>" +
+        "Net Annual Pay: $" + net.toFixed(2) + "<br>" +
+        "Monthly Take Home: $" + monthly.toFixed(2);
+}
+</script>
+
+</body>
+</html>
+<hr>
+<p style="font-size: 14px; color: gray;">
+Disclaimer: This calculator provides estimated values and does not constitute financial advice.
+</p>
+<hr>
+<h3>State Salary Calculators</h3>
+<ul>
+<li><a href="texas-salary-after-tax-calculator.html">Texas Salary Calculator</a></li>
+<li><a href="florida-salary-after-tax-calculator.html">Florida Salary Calculator</a></li>
+<li><a href="nevada-salary-after-tax-calculator.html">Nevada Salary Calculator</a></li>
+<li><a href="tennessee-salary-after-tax-calculator.html">Tennessee Salary Calculator</a></li>
+</ul>
