@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title id="pageTitle">Salary Calculator</title>
+<meta name="description" id="metaDescription" content="Salary calculator">
+
+<style>
+body { font-family: Arial; max-width: 600px; margin: 40px auto; padding: 20px; }
+input, select, button { padding: 8px; margin: 5px 0; width: 100%; }
+.result { margin-top: 20px; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h1 id="pageHeading">State Salary Calculator</h1>
+
+<label>Annual Salary ($)</label>
+<input type="number" id="salary" placeholder="50000">
+
+<label>Filing Status</label>
+<select id="status">
+<option value="single">Single</option>
+<option value="married">Married</option>
+</select>
+
+<button onclick="calculate()">Calculate</button>
+
+<div class="result" id="output"></div>
+
+<script>
+
+// ===== 州数据表 =====
+const states = {
+    texas: { name: "Texas", stateTax: 0 },
+    florida: { name: "Florida", stateTax: 0 },
+    nevada: { name: "Nevada", stateTax: 0 },
+    tennessee: { name: "Tennessee", stateTax: 0 },
+    california: { name: "California", stateTax: 0.05 },
+    newyork: { name: "New York", stateTax: 0.06 }
+};
+
+// ===== 读取URL参数 =====
+const params = new URLSearchParams(window.location.search);
+const stateKey = params.get("state");
+
+if (states[stateKey]) {
+    const stateData = states[stateKey];
+
+    document.getElementById("pageTitle").innerText =
+        stateData.name + " Salary After Tax Calculator 2026";
+
+    document.getElementById("pageHeading").innerText =
+        stateData.name + " Salary After Tax Calculator";
+
+    document.getElementById("metaDescription").setAttribute(
+        "content",
+        "Use this " + stateData.name + " Salary After Tax Calculator to estimate your take-home pay in 2026."
+    );
+} else {
+    document.getElementById("pageHeading").innerText =
+        "US Salary Calculator";
+}
+
+// ===== 计算逻辑 =====
+function calculate() {
+    let salary = parseFloat(document.getElementById("salary").value);
+    let status = document.getElementById("status").value;
+
+    if (!salary) {
+        document.getElementById("output").innerHTML = "Please enter a salary.";
+        return;
+    }
+
+    let federalTaxRate = status === "single" ? 0.22 : 0.18;
+    let federalTax = salary * federalTaxRate;
+
+    let stateRate = states[stateKey] ? states[stateKey].stateTax : 0;
+    let stateTax = salary * stateRate;
+
+    let net = salary - federalTax - stateTax;
+    let monthly = net / 12;
+
+    document.getElementById("output").innerHTML =
+        "Federal Tax: $" + federalTax.toFixed(2) + "<br>" +
+        "State Tax: $" + stateTax.toFixed(2) + "<br>" +
+        "Net Annual Pay: $" + net.toFixed(2) + "<br>" +
+        "Monthly Take Home: $" + monthly.toFixed(2);
+}
+
+</script>
+
+</body>
+</html>
