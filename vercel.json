@@ -1,8 +1,1 @@
-{
-  "rewrites": [
-    {
-      "source": "/(.*)-salary-after-tax-calculator",
-      "destination": "/calculator.html"
-    }
-  ]
-}
+{}
