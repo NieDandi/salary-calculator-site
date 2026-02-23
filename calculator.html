@@ -86,6 +86,7 @@ document.getElementById("salary-form").addEventListener("submit", function(e) {
    ========================== */
 
 const stateData = {
+
   california: {
     name: "California",
     description: "Use our California salary after tax calculator to estimate your take-home pay.",
@@ -93,6 +94,7 @@ const stateData = {
     faq1: "Yes, California has one of the highest state income tax rates in the U.S.",
     faq2: "Yes, California is considered a high-tax state."
   },
+
   texas: {
     name: "Texas",
     description: "Use our Texas salary after tax calculator to estimate your take-home pay.",
@@ -100,7 +102,15 @@ const stateData = {
     faq1: "No, Texas does not have state income tax.",
     faq2: "No, Texas is considered a tax-friendly state."
   },
-  florida,  
+
+  florida: {
+    name: "Florida",
+    description: "Use our Florida salary after tax calculator to estimate your take-home pay.",
+    taxInfo: "Florida does not charge state income tax.",
+    faq1: "No, Florida does not have state income tax.",
+    faq2: "No, Florida is considered a tax-friendly state."
+  },
+
   newyork: {
     name: "New York",
     description: "Use our New York salary after tax calculator to estimate your take-home pay.",
@@ -155,15 +165,9 @@ const stateData = {
     taxInfo: "North Carolina has a flat state income tax rate.",
     faq1: "Yes, North Carolina has state income tax.",
     faq2: "North Carolina is considered relatively tax-friendly."
-  }: {
-    name: "Florida",
-    description: "Use our Florida salary after tax calculator to estimate your take-home pay.",
-    taxInfo: "Florida does not charge state income tax.",
-    faq1: "No, Florida does not have state income tax.",
-    faq2: "No, Florida is considered a tax-friendly state."
   }
-};
 
+};
 const path = window.location.pathname;
 const stateKey = path.split("-")[0].replace("/", "");
 
