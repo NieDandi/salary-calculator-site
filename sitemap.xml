@@ -1,20 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-<loc>https://salary-calculator-site-liart.vercel.app/</loc>
-</url>
+  <url>
+    <loc>https://salary-calculator-site-liart.vercel.app/</loc>
+  </url>
 
-<url>
-<loc>https://salary-calculator-site-liart.vercel.app/california-salary-after-tax-calculator</loc>
-</url>
+  <url>
+    <loc>https://salary-calculator-site-liart.vercel.app/california-salary-after-tax-calculator</loc>
+  </url>
 
-<url>
-<loc>https://salary-calculator-site-liart.vercel.app/texas-salary-after-tax-calculator</loc>
-</url>
+  <url>
+    <loc>https://salary-calculator-site-liart.vercel.app/texas-salary-after-tax-calculator</loc>
+  </url>
 
-<url>
-<loc>https://salary-calculator-site-liart.vercel.app/florida-salary-after-tax-calculator</loc>
-</url>
+  <url>
+    <loc>https://salary-calculator-site-liart.vercel.app/florida-salary-after-tax-calculator</loc>
+  </url>
+
+  <url>
+    <loc>https://salary-calculator-site-liart.vercel.app/newyork-salary-after-tax-calculator</loc>
+  </url>
+
+  <url>
+    <loc>https://salary-calculator-site-liart.vercel.app/illinois-salary-after-tax-calculator</loc>
+  </url>
+
+  <url>
+    <loc>https://salary-calculator-site-liart.vercel.app/washington-salary-after-tax-calculator</loc>
+  </url>
+
+  <url>
+    <loc>https://salary-calculator-site-liart.vercel.app/georgia-salary-after-tax-calculator</loc>
+  </url>
+
+  <url>
+    <loc>https://salary-calculator-site-liart.vercel.app/ohio-salary-after-tax-calculator</loc>
+  </url>
+
+  <url>
+    <loc>https://salary-calculator-site-liart.vercel.app/pennsylvania-salary-after-tax-calculator</loc>
+  </url>
+
+  <url>
+    <loc>https://salary-calculator-site-liart.vercel.app/northcarolina-salary-after-tax-calculator</loc>
+  </url>
 
 </urlset>
