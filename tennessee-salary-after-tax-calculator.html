@@ -15,6 +15,7 @@ input, select, button { padding: 8px; margin: 5px 0; width: 100%; }
 .result { margin-top: 20px; font-weight: bold; }
 </style>
 </head>
+
 <body>
 
 <h1>Tennessee Salary After Tax Calculator</h1>
@@ -35,6 +36,7 @@ Check your own salary now ↓
 </p>
 
 <div class="result" id="output"></div>
+
 <h2>How This Tennessee Salary After Tax Calculator Works</h2>
 
 <p>
@@ -46,7 +48,6 @@ Tennessee does not have a state income tax, so this calculator only applies fede
 For more accurate tax calculations, always consult official IRS tax brackets or a certified tax professional.
 This tool is designed for quick estimation purposes only.
 </p>
-<div class="result" id="output"></div>
 
 <script>
 function calculate() {
@@ -58,11 +59,9 @@ function calculate() {
         return;
     }
 
-    // Simplified federal tax estimate
     let federalTaxRate = status === "single" ? 0.22 : 0.18;
     let federalTax = salary * federalTaxRate;
 
-    // Estimated state average 5%
     let stateTax = 0;
 
     let net = salary - federalTax - stateTax;
@@ -86,19 +85,17 @@ Bookmark this calculator for future salary checks.
 Disclaimer: This calculator provides estimated values and does not constitute financial advice.
 </p>
 
-</body>
-</html>
 <hr>
-<p style="font-size: 14px; color: gray;">
-Disclaimer: This calculator provides estimated values and does not constitute financial advice.
-</p>
+
 <p><a href="index.html">US Salary After Tax Calculator</a></p>
-<hr>
+
 <h3>Other State Salary Calculators</h3>
 <ul>
 <li><a href="texas-salary-after-tax-calculator.html">Texas Salary Calculator</a></li>
 <li><a href="florida-salary-after-tax-calculator.html">Florida Salary Calculator</a></li>
 <li><a href="nevada-salary-after-tax-calculator.html">Nevada Salary Calculator</a></li>
 <li><a href="tennessee-salary-after-tax-calculator.html">Tennessee Salary Calculator</a></li>
-
 </ul>
+
+</body>
+</html>
