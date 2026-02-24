@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>US Salary After Tax Calculator (2026) – Estimate Your Take Home Pay</title>
+<title>Texas Salary After Tax Calculator (2026) – Estimate Your Take Home Pay</title>
 
-<meta name="description" content="Use this Texas Salary After Tax Calculator to estimate your federal tax, Texas income tax, and monthly take-home pay in 2026. Free and simple paycheck estimator.">
+<meta name="description" content="Use this Texas Salary After Tax Calculator to estimate your federal tax and monthly take-home pay in 2026. Texas has no state income tax. Free paycheck estimator.">
 
 <meta name="keywords" content="salary after tax calculator, take home pay calculator, US income tax calculator 2026">
 
@@ -16,6 +16,7 @@ input, select, button { padding: 8px; margin: 5px 0; width: 100%; }
 .result { margin-top: 20px; font-weight: bold; }
 </style>
 </head>
+
 <body>
 
 <h1>Texas Salary After Tax Calculator</h1>
@@ -36,6 +37,7 @@ Check your own salary now ↓
 </p>
 
 <div class="result" id="output"></div>
+
 <h2>How This Texas Salary After Tax Calculator Works</h2>
 
 <p>
@@ -47,7 +49,6 @@ Texas does not have a state income tax, so this calculator only applies federal 
 For more accurate tax calculations, always consult official IRS tax brackets or a certified tax professional.
 This tool is designed for quick estimation purposes only.
 </p>
-<div class="result" id="output"></div>
 
 <script>
 function calculate() {
@@ -59,11 +60,9 @@ function calculate() {
         return;
     }
 
-    // Simplified federal tax estimate
     let federalTaxRate = status === "single" ? 0.22 : 0.18;
     let federalTax = salary * federalTaxRate;
 
-    // Estimated state average 5%
     let stateTax = 0;
 
     let net = salary - federalTax - stateTax;
@@ -87,19 +86,17 @@ Bookmark this calculator for future salary checks.
 Disclaimer: This calculator provides estimated values and does not constitute financial advice.
 </p>
 
-</body>
-</html>
 <hr>
-<p style="font-size: 14px; color: gray;">
-Disclaimer: This calculator provides estimated values and does not constitute financial advice.
-</p>
+
 <p><a href="index.html">US Salary After Tax Calculator</a></p>
-<hr>
+
 <h3>Other State Salary Calculators</h3>
 <ul>
 <li><a href="texas-salary-after-tax-calculator.html">Texas Salary Calculator</a></li>
 <li><a href="florida-salary-after-tax-calculator.html">Florida Salary Calculator</a></li>
 <li><a href="nevada-salary-after-tax-calculator.html">Nevada Salary Calculator</a></li>
 <li><a href="tennessee-salary-after-tax-calculator.html">Tennessee Salary Calculator</a></li>
-
 </ul>
+
+</body>
+</html>
