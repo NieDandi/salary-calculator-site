@@ -6,20 +6,93 @@
 
 <title>Michigan Salary After Tax Calculator (2026)</title>
 
-<meta name="description" content="Use this Michigan Salary After Tax Calculator to estimate your federal tax, Michigan state income tax, and monthly take-home pay in 2026. Free paycheck estimator for Michigan residents.">
+<meta name="description" content="Use this Michigan Salary After Tax Calculator to estimate your federal tax, Michigan state income tax, and monthly take-home pay in 2026.">
 
 <meta name="keywords" content="Michigan salary after tax calculator, Michigan take home pay calculator, Michigan income tax calculator 2026">
 
 <style>
-body { font-family: Arial; max-width: 700px; margin: 40px auto; padding: 20px; line-height: 1.6; }
-input, select, button { padding: 8px; margin: 5px 0; width: 100%; }
-.result { margin-top: 20px; font-weight: bold; }
-h2 { margin-top: 40px; }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-top: 50px;
+    font-size: 22px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 8px;
+}
+
+.calculator-box {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-top: 20px;
+}
+
+input, select, button {
+    padding: 10px;
+    margin: 8px 0;
+    width: 100%;
+    font-size: 16px;
+}
+
+button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #1558b0;
+}
+
+.result-box {
+    background: #e6f4ea;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.footer {
+    margin-top: 40px;
+    font-size: 14px;
+    color: gray;
+}
+
+.state-links ul {
+    columns: 2;
+    padding-left: 20px;
+}
+
+.state-links li {
+    margin-bottom: 6px;
+}
+
 </style>
 </head>
+
 <body>
 
 <h1>Michigan Salary After Tax Calculator</h1>
+
+<p>Estimate your annual and monthly take-home pay after federal and Michigan state taxes.</p>
+
+<div class="calculator-box">
 
 <label>Annual Salary ($)</label>
 <input type="number" id="salary" placeholder="50000">
@@ -32,46 +105,54 @@ h2 { margin-top: 40px; }
 
 <button onclick="calculate()">Calculate</button>
 
-<p style="font-weight:bold; margin-top:10px;">
-Check your own salary now ↓
-</p>
+<div class="result-box" id="output"></div>
 
-<div class="result" id="output"></div>
+</div>
 
-<h2>How This Michigan Salary After Tax Calculator Works</h2>
+<h2>How This Calculator Works</h2>
 
 <p>
-This Michigan salary after tax calculator provides an estimated breakdown of your annual income after federal and Michigan state taxes. It includes a simplified federal tax estimate and Michigan's flat state income tax rate.
-</p>
-
-<p>
-The results are designed for quick salary estimation purposes only. Actual tax liability may vary depending on deductions, credits, and individual circumstances.
+This calculator estimates your take-home pay after federal and Michigan state taxes using simplified assumptions.
 </p>
 
 <h2>Michigan State Income Tax Overview (2026)</h2>
 
 <p>
-Michigan applies a flat state income tax rate to taxable income. Unlike progressive systems used in some states, Michigan taxes all eligible income at a single percentage rate. This means your effective state tax depends mainly on your total taxable income rather than bracket tiers.
+Michigan applies a flat state income tax rate to taxable income.
 </p>
+
+<h2>Federal vs State Taxes</h2>
 
 <p>
-In addition to federal income tax, employees in Michigan also contribute to Social Security and Medicare through payroll taxes.
+Federal income taxes are progressive, while Michigan uses a flat tax structure.
 </p>
 
-<h2>Example Take-Home Pay in Michigan</h2>
+<div class="footer">
 
-<p>
-For example, if you earn $70,000 per year in Michigan as a single filer, your total tax obligation includes federal income tax plus Michigan's flat state tax. After subtracting estimated taxes, your annual and monthly take-home pay can be calculated using this tool.
-</p>
+<p><strong>Disclaimer:</strong> This calculator provides estimated values and does not constitute financial advice.</p>
 
-<h2>Federal vs State Taxes in Michigan</h2>
+<p><a href="index.html">US Salary After Tax Calculator</a></p>
 
-<p>
-Federal income tax rates are progressive and apply nationwide. Michigan, however, uses a flat state tax structure. Understanding the difference between federal and state taxation helps you better estimate your net income and plan your finances accordingly.
-</p>
+</div>
+
+<hr>
+
+<div class="state-links">
+<h3>Other State Salary Calculators</h3>
+<ul>
+<li><a href="california-salary-after-tax-calculator.html">California</a></li>
+<li><a href="texas-salary-after-tax-calculator.html">Texas</a></li>
+<li><a href="florida-salary-after-tax-calculator.html">Florida</a></li>
+<li><a href="nevada-salary-after-tax-calculator.html">Nevada</a></li>
+<li><a href="tennessee-salary-after-tax-calculator.html">Tennessee</a></li>
+<li><a href="illinois-salary-after-tax-calculator.html">Illinois</a></li>
+<li><a href="michigan-salary-after-tax-calculator.html">Michigan</a></li>
+</ul>
+</div>
 
 <script>
 function calculate() {
+
     let salary = parseFloat(document.getElementById("salary").value);
     let status = document.getElementById("status").value;
 
@@ -80,12 +161,10 @@ function calculate() {
         return;
     }
 
-    // Simplified federal tax estimate
     let federalTaxRate = status === "single" ? 0.22 : 0.18;
     let federalTax = salary * federalTaxRate;
 
-    // Michigan flat state tax estimate (approximation)
-    let stateTaxRate = 0.0425;
+    let stateTaxRate = 0.0425; // change per state
     let stateTax = salary * stateTaxRate;
 
     let net = salary - federalTax - stateTax;
@@ -93,34 +172,11 @@ function calculate() {
 
     document.getElementById("output").innerHTML =
         "Federal Tax (est): $" + federalTax.toFixed(2) + "<br>" +
-        "Michigan State Tax (est): $" + stateTax.toFixed(2) + "<br>" +
+        "State Tax (est): $" + stateTax.toFixed(2) + "<br><br>" +
         "Net Annual Pay: $" + net.toFixed(2) + "<br>" +
         "Monthly Take Home: $" + monthly.toFixed(2);
 }
 </script>
-
-<hr>
-
-<p style="font-weight:bold; margin-top:20px;">
-Bookmark this calculator for future salary checks.
-</p>
-    
-<p style="font-size: 14px; color: gray;">
-Disclaimer: This calculator provides estimated values and does not constitute financial or tax advice.
-</p>
-
-<p><a href="index.html">US Salary After Tax Calculator</a></p>
-
-<hr>
-
-<h3>Other State Salary Calculators</h3>
-<ul>
-<li><a href="california-salary-after-tax-calculator.html">California Salary Calculator</a></li>
-<li><a href="texas-salary-after-tax-calculator.html">Texas Salary Calculator</a></li>
-<li><a href="florida-salary-after-tax-calculator.html">Florida Salary Calculator</a></li>
-<li><a href="nevada-salary-after-tax-calculator.html">Nevada Salary Calculator</a></li>
-<li><a href="tennessee-salary-after-tax-calculator.html">Tennessee Salary Calculator</a></li>
-</ul>
 
 </body>
 </html>
