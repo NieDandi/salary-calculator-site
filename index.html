@@ -9,14 +9,16 @@
 
 <meta name="description" content="Use this free US Salary After Tax Calculator to estimate your federal tax, state tax, and monthly take-home pay in 2026. Simple and fast income tax estimator.">
 
-<meta name="keywords" content="salary after tax calculator, take home pay calculator, US income tax calculator 2026">
-
 <style>
-body { font-family: Arial; max-width: 600px; margin: 40px auto; padding: 20px; }
+body { font-family: Arial; max-width: 900px; margin: 40px auto; padding: 20px; }
 input, select, button { padding: 8px; margin: 5px 0; width: 100%; }
 .result { margin-top: 20px; font-weight: bold; }
+.state-grid { columns: 3; line-height: 1.8; font-size:14px; }
+a { text-decoration:none; color:#1a73e8; }
+a:hover { text-decoration:underline; }
 </style>
 </head>
+
 <body>
 
 <h1>US Salary After Tax Calculator</h1>
@@ -31,18 +33,82 @@ input, select, button { padding: 8px; margin: 5px 0; width: 100%; }
 </select>
 
 <button onclick="calculate()">Calculate</button>
+
+<div class="result" id="output"></div>
+
 <h2>How This Salary After Tax Calculator Works</h2>
 
 <p>
-This US Salary After Tax Calculator provides a simplified estimate of your annual take-home pay after federal and state taxes.
-The calculator applies an average federal tax rate based on filing status and an estimated state tax rate.
+This calculator provides a simplified estimate of your annual take-home pay after federal and state taxes.
+For official figures, consult IRS tax brackets or a licensed tax professional.
 </p>
 
-<p>
-For more accurate tax calculations, always consult official IRS tax brackets or a certified tax professional.
-This tool is designed for quick estimation purposes only.
+<hr>
+
+<h2>Salary After Tax Calculator by State</h2>
+
+<p>Select your state below to calculate your take-home pay including federal and state income tax.</p>
+
+<div class="state-grid">
+
+<a href="alabama-salary-after-tax-calculator.html">Alabama</a><br>
+<a href="alaska-salary-after-tax-calculator.html">Alaska</a><br>
+<a href="arizona-salary-after-tax-calculator.html">Arizona</a><br>
+<a href="arkansas-salary-after-tax-calculator.html">Arkansas</a><br>
+<a href="california-salary-after-tax-calculator.html">California</a><br>
+<a href="colorado-salary-after-tax-calculator.html">Colorado</a><br>
+<a href="connecticut-salary-after-tax-calculator.html">Connecticut</a><br>
+<a href="delaware-salary-after-tax-calculator.html">Delaware</a><br>
+<a href="florida-salary-after-tax-calculator.html">Florida</a><br>
+<a href="georgia-salary-after-tax-calculator.html">Georgia</a><br>
+<a href="hawaii-salary-after-tax-calculator.html">Hawaii</a><br>
+<a href="idaho-salary-after-tax-calculator.html">Idaho</a><br>
+<a href="illinois-salary-after-tax-calculator.html">Illinois</a><br>
+<a href="indiana-salary-after-tax-calculator.html">Indiana</a><br>
+<a href="iowa-salary-after-tax-calculator.html">Iowa</a><br>
+<a href="kansas-salary-after-tax-calculator.html">Kansas</a><br>
+<a href="kentucky-salary-after-tax-calculator.html">Kentucky</a><br>
+<a href="louisiana-salary-after-tax-calculator.html">Louisiana</a><br>
+<a href="maine-salary-after-tax-calculator.html">Maine</a><br>
+<a href="maryland-salary-after-tax-calculator.html">Maryland</a><br>
+<a href="massachusetts-salary-after-tax-calculator.html">Massachusetts</a><br>
+<a href="michigan-salary-after-tax-calculator.html">Michigan</a><br>
+<a href="minnesota-salary-after-tax-calculator.html">Minnesota</a><br>
+<a href="mississippi-salary-after-tax-calculator.html">Mississippi</a><br>
+<a href="missouri-salary-after-tax-calculator.html">Missouri</a><br>
+<a href="montana-salary-after-tax-calculator.html">Montana</a><br>
+<a href="nebraska-salary-after-tax-calculator.html">Nebraska</a><br>
+<a href="nevada-salary-after-tax-calculator.html">Nevada</a><br>
+<a href="new-hampshire-salary-after-tax-calculator.html">New Hampshire</a><br>
+<a href="new-jersey-salary-after-tax-calculator.html">New Jersey</a><br>
+<a href="new-mexico-salary-after-tax-calculator.html">New Mexico</a><br>
+<a href="new-york-salary-after-tax-calculator.html">New York</a><br>
+<a href="north-carolina-salary-after-tax-calculator.html">North Carolina</a><br>
+<a href="north-dakota-salary-after-tax-calculator.html">North Dakota</a><br>
+<a href="ohio-salary-after-tax-calculator.html">Ohio</a><br>
+<a href="oklahoma-salary-after-tax-calculator.html">Oklahoma</a><br>
+<a href="oregon-salary-after-tax-calculator.html">Oregon</a><br>
+<a href="pennsylvania-salary-after-tax-calculator.html">Pennsylvania</a><br>
+<a href="rhode-island-salary-after-tax-calculator.html">Rhode Island</a><br>
+<a href="south-carolina-salary-after-tax-calculator.html">South Carolina</a><br>
+<a href="south-dakota-salary-after-tax-calculator.html">South Dakota</a><br>
+<a href="tennessee-salary-after-tax-calculator.html">Tennessee</a><br>
+<a href="texas-salary-after-tax-calculator.html">Texas</a><br>
+<a href="utah-salary-after-tax-calculator.html">Utah</a><br>
+<a href="vermont-salary-after-tax-calculator.html">Vermont</a><br>
+<a href="virginia-salary-after-tax-calculator.html">Virginia</a><br>
+<a href="washington-salary-after-tax-calculator.html">Washington</a><br>
+<a href="west-virginia-salary-after-tax-calculator.html">West Virginia</a><br>
+<a href="wisconsin-salary-after-tax-calculator.html">Wisconsin</a><br>
+<a href="wyoming-salary-after-tax-calculator.html">Wyoming</a><br>
+
+</div>
+
+<hr>
+
+<p style="font-size: 13px; color: gray;">
+Disclaimer: This calculator provides estimated values and does not constitute financial advice.
 </p>
-<div class="result" id="output"></div>
 
 <script>
 function calculate() {
@@ -54,11 +120,9 @@ function calculate() {
         return;
     }
 
-    // Simplified federal tax estimate
     let federalTaxRate = status === "single" ? 0.22 : 0.18;
     let federalTax = salary * federalTaxRate;
 
-    // Estimated state average 5%
     let stateTax = salary * 0.05;
 
     let net = salary - federalTax - stateTax;
@@ -74,31 +138,3 @@ function calculate() {
 
 </body>
 </html>
-<hr>
-
-<p style="font-weight:bold; margin-top:20px;">
-Bookmark this calculator for future salary checks.
-</p>
-
-<p style="font-size: 14px; color: gray;">
-Disclaimer: This calculator provides estimated values and does not constitute financial advice.
-</p>
-<hr>
-<h3>State Salary Calculators</h3>
-<ul>
-<li><a href="texas-salary-after-tax-calculator.html">Texas Salary Calculator</a></li>
-<li><a href="florida-salary-after-tax-calculator.html">Florida Salary Calculator</a></li>
-<li><a href="nevada-salary-after-tax-calculator.html">Nevada Salary Calculator</a></li>
-<li><a href="tennessee-salary-after-tax-calculator.html">Tennessee Salary Calculator</a></li>
-<li><a href="california-salary-after-tax-calculator.html">California Salary Calculator</a></li>
-</ul>
-<h2>Salary Calculators by State</h2>
-<ul>
-<li><a href="/california-salary-after-tax-calculator">California Salary Calculator</a></li>
-<li><a href="/texas-salary-after-tax-calculator">Texas Salary Calculator</a></li>
-<li><a href="/florida-salary-after-tax-calculator">Florida Salary Calculator</a></li>
-<li><a href="/new-york-salary-after-tax-calculator">New York Salary Calculator</a></li>
-</ul>
-
-
-
