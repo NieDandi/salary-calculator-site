@@ -4,22 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Texas Salary After Tax Calculator (2026) – Estimate Your Take Home Pay</title>
+<title>Texas Salary After Tax Calculator (2026)</title>
 
-<meta name="description" content="Use this Texas Salary After Tax Calculator to estimate your federal tax and monthly take-home pay in 2026. Texas has no state income tax. Free paycheck estimator.">
-
-<meta name="keywords" content="salary after tax calculator, take home pay calculator, US income tax calculator 2026">
+<meta name="description" content="Use this Texas Salary After Tax Calculator to estimate your federal tax, Texas state income tax, and monthly take-home pay in 2026.">
 
 <style>
-body { font-family: Arial; max-width: 600px; margin: 40px auto; padding: 20px; }
-input, select, button { padding: 8px; margin: 5px 0; width: 100%; }
-.result { margin-top: 20px; font-weight: bold; }
+body { font-family: Arial; max-width: 900px; margin: 40px auto; padding: 20px; }
+.calculator-box { background: #f5f7fa; padding: 20px; border-radius: 8px; }
+button { padding: 10px; width: 100%; background:#1a73e8; color:white; border:none; }
+.result { margin-top: 15px; font-weight:bold; }
 </style>
 </head>
-
 <body>
 
-<h1>Texas Salary After Tax Calculator</h1>
+<h1>Texas Salary After Tax Calculator (2026)</h1>
+
+<div class="calculator-box">
 
 <label>Annual Salary ($)</label>
 <input type="number" id="salary" placeholder="50000">
@@ -32,23 +32,9 @@ input, select, button { padding: 8px; margin: 5px 0; width: 100%; }
 
 <button onclick="calculate()">Calculate</button>
 
-<p style="font-weight:bold; margin-top:10px;">
-Check your own salary now ↓
-</p>
-
 <div class="result" id="output"></div>
 
-<h2>How This Texas Salary After Tax Calculator Works</h2>
-
-<p>
-This Texas Salary After Tax Calculator provides a simplified estimate of your annual take-home pay after federal taxes.
-Texas does not have a state income tax, so this calculator only applies federal tax rates.
-</p>
-
-<p>
-For more accurate tax calculations, always consult official IRS tax brackets or a certified tax professional.
-This tool is designed for quick estimation purposes only.
-</p>
+</div>
 
 <script>
 function calculate() {
@@ -63,40 +49,19 @@ function calculate() {
     let federalTaxRate = status === "single" ? 0.22 : 0.18;
     let federalTax = salary * federalTaxRate;
 
-    let stateTax = 0;
+    let stateTaxRate = 0.0;
+    let stateTax = salary * stateTaxRate;
 
     let net = salary - federalTax - stateTax;
     let monthly = net / 12;
 
     document.getElementById("output").innerHTML =
         "Federal Tax: $" + federalTax.toFixed(2) + "<br>" +
-        "State Tax (est): $" + stateTax.toFixed(2) + "<br>" +
-        "Net Annual Pay: $" + net.toFixed(2) + "<br>" +
-        "Monthly Take Home: $" + monthly.toFixed(2);
+        "State Tax: $" + stateTax.toFixed(2) + "<br>" +
+        "Net Annual: $" + net.toFixed(2) + "<br>" +
+        "Monthly: $" + monthly.toFixed(2);
 }
 </script>
-
-<hr>
-
-<p style="font-weight:bold; margin-top:20px;">
-Bookmark this calculator for future salary checks.
-</p>
-
-<p style="font-size: 14px; color: gray;">
-Disclaimer: This calculator provides estimated values and does not constitute financial advice.
-</p>
-
-<hr>
-
-<p><a href="index.html">US Salary After Tax Calculator</a></p>
-
-<h3>Other State Salary Calculators</h3>
-<ul>
-<li><a href="texas-salary-after-tax-calculator.html">Texas Salary Calculator</a></li>
-<li><a href="florida-salary-after-tax-calculator.html">Florida Salary Calculator</a></li>
-<li><a href="nevada-salary-after-tax-calculator.html">Nevada Salary Calculator</a></li>
-<li><a href="tennessee-salary-after-tax-calculator.html">Tennessee Salary Calculator</a></li>
-</ul>
 
 </body>
 </html>
