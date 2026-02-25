@@ -8,8 +8,6 @@
 
 <meta name="description" content="Use this South Dakota Salary After Tax Calculator to estimate your federal tax, South Dakota state income tax, and monthly take-home pay in 2026.">
 
-<meta name="keywords" content="South Dakota salary after tax calculator, South Dakota take home pay calculator, South Dakota income tax calculator 2026">
-
 <style>
 body {
     font-family: Arial, sans-serif;
@@ -18,27 +16,37 @@ body {
     margin: 40px auto;
     padding: 20px;
     line-height: 1.6;
+    color: #222;
 }
 
-h1 { font-size: 32px; }
+h1 { font-size: 32px; margin-bottom: 10px; }
+
 .calculator-box {
     background: white;
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
+
 input, select, button {
     padding: 10px;
     margin: 8px 0;
     width: 100%;
     font-size: 16px;
 }
+
 button {
     background-color: #1a73e8;
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 4px;
 }
+
+button:hover {
+    background-color: #1558b0;
+}
+
 .result-box {
     background: #e6f4ea;
     padding: 15px;
@@ -46,14 +54,60 @@ button {
     margin-top: 15px;
     font-weight: bold;
 }
+
+.ad-box {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.top-states {
+    background: #ffffff;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.top-states ul {
+    columns: 2;
+    list-style: none;
+    padding: 0;
+}
+
+.top-states li {
+    margin-bottom: 8px;
+}
+
+.disclaimer {
+    font-size: 13px;
+    color: #777;
+    margin-top: 40px;
+}
 </style>
+
+<!-- Google AdSense Placeholder -->
+<!-- 审核通过后把 ca-pub-xxxxxxxx 换成你的 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxx"
+     crossorigin="anonymous"></script>
+
 </head>
 
 <body>
 
 <h1>South Dakota Salary After Tax Calculator (2026)</h1>
 
-<p><strong>Estimate your annual and monthly take-home pay</strong> after federal and South Dakota state taxes.</p>
+<!-- 顶部广告 -->
+<div class="ad-box">
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-xxxxxxxx"
+     data-ad-slot="1111111111"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
 
 <div class="calculator-box">
 
@@ -72,38 +126,54 @@ button {
 
 </div>
 
-<h2>How This Calculator Works</h2>
-<p>This calculator estimates your take-home pay after federal and South Dakota state taxes using simplified assumptions.</p>
+<!-- 计算器下方广告 -->
+<div class="ad-box">
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-xxxxxxxx"
+     data-ad-slot="2222222222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
 
-<div class="footer">
-<p><strong>Disclaimer:</strong> This calculator provides estimated values and does not constitute financial or tax advice.</p>
+<div class="top-states">
+<h3>Top US State Salary After Tax Calculators</h3>
+<ul>
+<li><a href="california-salary-after-tax-calculator.html">California</a></li>
+<li><a href="texas-salary-after-tax-calculator.html">Texas</a></li>
+<li><a href="florida-salary-after-tax-calculator.html">Florida</a></li>
+<li><a href="new-york-salary-after-tax-calculator.html">New York</a></li>
+<li><a href="illinois-salary-after-tax-calculator.html">Illinois</a></li>
+<li><a href="georgia-salary-after-tax-calculator.html">Georgia</a></li>
+<li><a href="pennsylvania-salary-after-tax-calculator.html">Pennsylvania</a></li>
+</ul>
+</div>
+
+<div class="disclaimer">
+Disclaimer: This calculator provides estimated values only and does not constitute financial, tax, or legal advice.
 </div>
 
 <script>
 function calculate() {
 
     let salary = parseFloat(document.getElementById("salary").value);
-    let status = document.getElementById("status").value;
-
     if (!salary) {
         document.getElementById("output").innerHTML = "Please enter a salary.";
         return;
     }
 
-    let federalTaxRate = status === "single" ? 0.22 : 0.18;
-    let federalTax = salary * federalTaxRate;
-
-    let stateTaxRate = 0.0;
-    let stateTax = salary * stateTaxRate;
+    let federalTax = salary * 0.22;
+    let stateTax = salary * 0.0;
 
     let net = salary - federalTax - stateTax;
     let monthly = net / 12;
 
     document.getElementById("output").innerHTML =
-        "Federal Tax (est): $" + federalTax.toFixed(2) + "<br>" +
-        "State Tax (est): $" + stateTax.toFixed(2) + "<br><br>" +
-        "Net Annual Pay: $" + net.toFixed(2) + "<br>" +
-        "Monthly Take Home: $" + monthly.toFixed(2);
+        "Net Annual Pay: $" + net.toFixed(2) +
+        "<br>Monthly Take Home: $" + monthly.toFixed(2);
 }
 </script>
 
