@@ -8,16 +8,52 @@
 
 <meta name="description" content="Use this Hawaii Salary After Tax Calculator to estimate your federal tax, Hawaii state income tax, and monthly take-home pay in 2026.">
 
+<meta name="keywords" content="Hawaii salary after tax calculator, Hawaii take home pay calculator, Hawaii income tax calculator 2026">
+
 <style>
-body { font-family: Arial; max-width: 900px; margin: 40px auto; padding: 20px; }
-.calculator-box { background: #f5f7fa; padding: 20px; border-radius: 8px; }
-button { padding: 10px; width: 100%; background:#1a73e8; color:white; border:none; }
-.result { margin-top: 15px; font-weight:bold; }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1 { font-size: 32px; }
+.calculator-box {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+input, select, button {
+    padding: 10px;
+    margin: 8px 0;
+    width: 100%;
+    font-size: 16px;
+}
+button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.result-box {
+    background: #e6f4ea;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 15px;
+    font-weight: bold;
+}
 </style>
 </head>
+
 <body>
 
 <h1>Hawaii Salary After Tax Calculator (2026)</h1>
+
+<p><strong>Estimate your annual and monthly take-home pay</strong> after federal and Hawaii state taxes.</p>
 
 <div class="calculator-box">
 
@@ -32,12 +68,20 @@ button { padding: 10px; width: 100%; background:#1a73e8; color:white; border:non
 
 <button onclick="calculate()">Calculate</button>
 
-<div class="result" id="output"></div>
+<div class="result-box" id="output"></div>
 
+</div>
+
+<h2>How This Calculator Works</h2>
+<p>This calculator estimates your take-home pay after federal and Hawaii state taxes using simplified assumptions.</p>
+
+<div class="footer">
+<p><strong>Disclaimer:</strong> This calculator provides estimated values and does not constitute financial or tax advice.</p>
 </div>
 
 <script>
 function calculate() {
+
     let salary = parseFloat(document.getElementById("salary").value);
     let status = document.getElementById("status").value;
 
@@ -56,10 +100,10 @@ function calculate() {
     let monthly = net / 12;
 
     document.getElementById("output").innerHTML =
-        "Federal Tax: $" + federalTax.toFixed(2) + "<br>" +
-        "State Tax: $" + stateTax.toFixed(2) + "<br>" +
-        "Net Annual: $" + net.toFixed(2) + "<br>" +
-        "Monthly: $" + monthly.toFixed(2);
+        "Federal Tax (est): $" + federalTax.toFixed(2) + "<br>" +
+        "State Tax (est): $" + stateTax.toFixed(2) + "<br><br>" +
+        "Net Annual Pay: $" + net.toFixed(2) + "<br>" +
+        "Monthly Take Home: $" + monthly.toFixed(2);
 }
 </script>
 
