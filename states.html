@@ -9,6 +9,7 @@
     content="Browse salary after tax calculators for all 50 U.S. states. Compare take-home pay, state income tax impact, and estimated net salary by state."
   />
   <link rel="canonical" href="https://salary-calculator-site-blush.vercel.app/states.html" />
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -51,6 +52,20 @@
       padding: 26px;
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
       margin-bottom: 24px;
+    }
+
+    .main-nav {
+      margin: 20px 0;
+      font-size: 14px;
+    }
+
+    .main-nav a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+
+    .main-nav a:hover {
+      text-decoration: underline;
     }
 
     .button-row {
@@ -156,8 +171,20 @@
 </head>
 <body>
   <div class="container">
+
     <section class="hero">
       <h1>Salary After Tax Calculator by State</h1>
+
+      <nav class="main-nav">
+        <a href="index.html">Home</a> |
+        <a href="calculator.html">Calculator</a> |
+        <a href="states.html">All States</a> |
+        <a href="how-it-works.html">How It Works</a> |
+        <a href="state-income-tax-guide.html">State Tax Guide</a> |
+        <a href="faq.html">FAQ</a> |
+        <a href="about.html">About</a>
+      </nav>
+
       <p>
         Browse salary after tax calculators for all 50 U.S. states. This page helps you
         compare estimated take-home pay, understand how state income tax affects salary,
@@ -172,6 +199,7 @@
       <div class="button-row">
         <a class="btn" href="/calculator.html">Open Main Calculator</a>
         <a class="btn secondary" href="/index.html">Back to Homepage</a>
+        <a class="btn secondary" href="/state-income-tax-guide.html">State Tax Guide</a>
       </div>
     </section>
 
@@ -262,6 +290,19 @@
       <p>
         Each calculator is designed for quick salary comparison and income planning. Results are estimates only
         and may differ from actual payroll deductions, tax software, or professional tax advice.
+      </p>
+    </section>
+
+    <section class="content-box">
+      <h2>Understand State Tax Differences</h2>
+      <p>
+        If you are comparing salaries across locations, it is important to understand
+        how state income tax changes net pay. Some states have no income tax, while others
+        reduce take-home pay more significantly.
+      </p>
+      <p>
+        Read the <a href="/state-income-tax-guide.html">State Income Tax Guide</a> to learn
+        how different state tax systems affect salary after tax.
       </p>
     </section>
 

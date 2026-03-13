@@ -1,118 +1,339 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Alaska Salary After Tax Calculator (2026)</title>
-<meta name="description" content="Use our Alaska salary after tax calculator to estimate your take-home pay in 2026. Calculate federal and state taxes instantly.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Alaska Salary After Tax Calculator (2026)</title>
+<meta name="description" content="Use this Alaska salary after tax calculator to estimate take-home pay after federal and Alaska state taxes in 2026. Compare gross salary vs net income instantly.">
+<link rel="canonical" href="https://salary-calculator-site-blush.vercel.app/alaska-salary-after-tax-calculator.html" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Alaska Salary After Tax Calculator",
+  "url": "https://salary-calculator-site-blush.vercel.app/alaska-salary-after-tax-calculator.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "description": "Estimate take-home pay in Alaska after federal and state taxes.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 32px 20px 60px;
+  }
+
+  .box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 26px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+  }
+
+  h1, h2, h3 {
+    line-height: 1.25;
+  }
+
+  h1 {
+    font-size: 38px;
+    margin-bottom: 14px;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-top: 24px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin: 0 0 16px;
+  }
+
+  .calculator-box {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid #e6ebf2;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-top: 12px;
+    margin-bottom: 6px;
+  }
+
+  input, select, button {
+    width: 100%;
+    padding: 11px;
+    font-size: 16px;
+    border: 1px solid #d7dce3;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+
+  button {
+    margin-top: 16px;
+    background: #1a73e8;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #155ac2;
+  }
+
+  .result-box {
+    margin-top: 16px;
+    padding: 16px;
+    border-radius: 10px;
+    background: #eef6ff;
+    border: 1px solid #d7e8ff;
+    font-weight: bold;
+  }
+
+  .ad-box {
+    margin: 20px 0;
+    padding: 20px;
+    background: #f2f2f2;
+    text-align: center;
+    border-radius: 10px;
+  }
+
+  .quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .quick-links a {
+    background: #eef3fb;
+    color: #1a73e8;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+
+  .quick-links a:hover {
+    text-decoration: underline;
+  }
+
+  .nav {
+    margin-bottom: 18px;
+    font-size: 14px;
+  }
+
+  .nav a {
+    color: #1a73e8;
+    text-decoration: none;
+  }
+
+  .nav a:hover {
+    text-decoration: underline;
+  }
+
+  .note {
+    font-size: 13px;
+    color: #666;
+    margin-top: 28px;
+  }
+
+  @media (max-width: 700px) {
+    h1 {
+      font-size: 31px;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+  }
+</style>
 </head>
-
 <body>
+  <div class="container">
 
-<h1>Alaska Salary After Tax Calculator</h1>
+    <div class="nav">
+      <a href="index.html">Home</a> |
+      <a href="calculator.html">Calculator</a> |
+      <a href="states.html">All States</a> |
+      <a href="how-it-works.html">How It Works</a> |
+      <a href="state-income-tax-guide.html">State Tax Guide</a> |
+      <a href="faq.html">FAQ</a> |
+      <a href="about.html">About</a>
+    </div>
 
-<!-- Top Ad Placeholder -->
-<div style="margin:20px 0; padding:20px; background:#f2f2f2; text-align:center;">
-Top Ad Space
-</div>
+    <section class="box">
+      <h1>Alaska Salary After Tax Calculator</h1>
 
-<p>
-Use our free Alaska salary after tax calculator to quickly estimate your take-home pay.
-This tool includes federal and state income tax calculations to give you a clear idea of your net income.
-</p>
+      <p>
+        This Alaska salary after tax calculator helps estimate take-home pay after
+        federal and Alaska state taxes. It is useful for salary comparison, relocation planning,
+        and understanding how much of your gross income you may actually keep.
+      </p>
 
-<h2>How Salary Tax Works in Alaska</h2>
-<p>
-Income taxes in Alaska may include federal income tax, Social Security, Medicare,
-and possible state income tax. Your final take-home pay depends on your filing status,
-income level, and deductions.
-</p>
+      <p>
+        Use this page to estimate annual and monthly net income in Alaska,
+        compare after-tax salary outcomes, and understand how state tax rules affect take-home pay.
+      </p>
+    </section>
 
-<a href="calculator.html" style="display:inline-block;padding:10px 20px;background:#0073e6;color:white;text-decoration:none;">
-Calculate Your Salary Now
-</a>
+    <section class="box">
+      <div class="calculator-box">
 
-<!-- Middle Ad Placeholder -->
-<div style="margin:40px 0; padding:20px; background:#f2f2f2; text-align:center;">
-Middle Ad Space
-</div>
+        <label for="salary">Annual Salary ($)</label>
+        <input type="number" id="salary" placeholder="50000">
 
-<h2>Frequently Asked Questions</h2>
+        <label for="status">Filing Status</label>
+        <select id="status">
+          <option value="single">Single</option>
+          <option value="married">Married</option>
+        </select>
 
-<h3>How much tax will I pay in Alaska?</h3>
-<p>
-Your total tax depends on your annual salary and tax bracket. Use our calculator above for an instant estimate.
-</p>
+        <button onclick="calculate()">Calculate</button>
 
-<h3>Does Alaska have state income tax?</h3>
-<p>
-Some states have state income tax while others do not. Our calculator automatically accounts for it.
-</p>
+        <div class="result-box" id="output">
+          Enter your salary to estimate after-tax income in Alaska.
+        </div>
 
-<h3>What is the average salary in Alaska?</h3>
-<p>
-Average salaries vary by industry and city. Use our calculator to estimate your personal take-home pay.
-</p>
+      </div>
+    </section>
 
-<h2>Compare With Other States</h2>
-<ul>
-<li><a href="alabama-salary-after-tax-calculator.html">Alabama Salary Calculator</a></li>
-<li><a href="arizona-salary-after-tax-calculator.html">Arizona Salary Calculator</a></li>
-<li><a href="arkansas-salary-after-tax-calculator.html">Arkansas Salary Calculator</a></li>
-<li><a href="california-salary-after-tax-calculator.html">California Salary Calculator</a></li>
-<li><a href="colorado-salary-after-tax-calculator.html">Colorado Salary Calculator</a></li>
-<li><a href="connecticut-salary-after-tax-calculator.html">Connecticut Salary Calculator</a></li>
-<li><a href="delaware-salary-after-tax-calculator.html">Delaware Salary Calculator</a></li>
-<li><a href="florida-salary-after-tax-calculator.html">Florida Salary Calculator</a></li>
-<li><a href="georgia-salary-after-tax-calculator.html">Georgia Salary Calculator</a></li>
-<li><a href="hawaii-salary-after-tax-calculator.html">Hawaii Salary Calculator</a></li>
-<li><a href="idaho-salary-after-tax-calculator.html">Idaho Salary Calculator</a></li>
-<li><a href="illinois-salary-after-tax-calculator.html">Illinois Salary Calculator</a></li>
-<li><a href="indiana-salary-after-tax-calculator.html">Indiana Salary Calculator</a></li>
-<li><a href="iowa-salary-after-tax-calculator.html">Iowa Salary Calculator</a></li>
-<li><a href="kansas-salary-after-tax-calculator.html">Kansas Salary Calculator</a></li>
-<li><a href="kentucky-salary-after-tax-calculator.html">Kentucky Salary Calculator</a></li>
-<li><a href="louisiana-salary-after-tax-calculator.html">Louisiana Salary Calculator</a></li>
-<li><a href="maine-salary-after-tax-calculator.html">Maine Salary Calculator</a></li>
-<li><a href="maryland-salary-after-tax-calculator.html">Maryland Salary Calculator</a></li>
-<li><a href="massachusetts-salary-after-tax-calculator.html">Massachusetts Salary Calculator</a></li>
-<li><a href="michigan-salary-after-tax-calculator.html">Michigan Salary Calculator</a></li>
-<li><a href="minnesota-salary-after-tax-calculator.html">Minnesota Salary Calculator</a></li>
-<li><a href="mississippi-salary-after-tax-calculator.html">Mississippi Salary Calculator</a></li>
-<li><a href="missouri-salary-after-tax-calculator.html">Missouri Salary Calculator</a></li>
-<li><a href="montana-salary-after-tax-calculator.html">Montana Salary Calculator</a></li>
-<li><a href="nebraska-salary-after-tax-calculator.html">Nebraska Salary Calculator</a></li>
-<li><a href="nevada-salary-after-tax-calculator.html">Nevada Salary Calculator</a></li>
-<li><a href="new-hampshire-salary-after-tax-calculator.html">New Hampshire Salary Calculator</a></li>
-<li><a href="new-jersey-salary-after-tax-calculator.html">New Jersey Salary Calculator</a></li>
-<li><a href="new-mexico-salary-after-tax-calculator.html">New Mexico Salary Calculator</a></li>
-<li><a href="new-york-salary-after-tax-calculator.html">New York Salary Calculator</a></li>
-<li><a href="north-carolina-salary-after-tax-calculator.html">North Carolina Salary Calculator</a></li>
-<li><a href="north-dakota-salary-after-tax-calculator.html">North Dakota Salary Calculator</a></li>
-<li><a href="ohio-salary-after-tax-calculator.html">Ohio Salary Calculator</a></li>
-<li><a href="oklahoma-salary-after-tax-calculator.html">Oklahoma Salary Calculator</a></li>
-<li><a href="oregon-salary-after-tax-calculator.html">Oregon Salary Calculator</a></li>
-<li><a href="pennsylvania-salary-after-tax-calculator.html">Pennsylvania Salary Calculator</a></li>
-<li><a href="rhode-island-salary-after-tax-calculator.html">Rhode Island Salary Calculator</a></li>
-<li><a href="south-carolina-salary-after-tax-calculator.html">South Carolina Salary Calculator</a></li>
-<li><a href="south-dakota-salary-after-tax-calculator.html">South Dakota Salary Calculator</a></li>
-<li><a href="tennessee-salary-after-tax-calculator.html">Tennessee Salary Calculator</a></li>
-<li><a href="texas-salary-after-tax-calculator.html">Texas Salary Calculator</a></li>
-<li><a href="utah-salary-after-tax-calculator.html">Utah Salary Calculator</a></li>
-<li><a href="vermont-salary-after-tax-calculator.html">Vermont Salary Calculator</a></li>
-<li><a href="virginia-salary-after-tax-calculator.html">Virginia Salary Calculator</a></li>
-<li><a href="washington-salary-after-tax-calculator.html">Washington Salary Calculator</a></li>
-<li><a href="west-virginia-salary-after-tax-calculator.html">West Virginia Salary Calculator</a></li>
-<li><a href="wisconsin-salary-after-tax-calculator.html">Wisconsin Salary Calculator</a></li>
-<li><a href="wyoming-salary-after-tax-calculator.html">Wyoming Salary Calculator</a></li>
+    <div class="ad-box">
+      Ad Space
+    </div>
 
-</ul>
+    <section class="box">
+      <h2>How Taxes Work in Alaska</h2>
 
-<!-- Bottom Ad Placeholder -->
-<div style="margin:40px 0; padding:20px; background:#f2f2f2; text-align:center;">
-Bottom Ad Space
-</div>
+      <p>
+        Take-home pay in Alaska depends on federal income tax, payroll taxes,
+        and Alaska state income tax rules. Some states use flat tax systems,
+        while others apply progressive tax rates based on income level.
+      </p>
+
+      <p>
+        Because of these tax differences, the same gross salary may produce a different
+        net income in Alaska than it would in another U.S. state.
+        This calculator provides an estimate for salary planning and comparison purposes.
+      </p>
+    </section>
+
+    <section class="box">
+      <h2>Example Salaries in Alaska</h2>
+
+      <p>
+        Here are common salary examples people often compare in Alaska:
+      </p>
+
+      <ul>
+        <li>$40,000 salary after tax in Alaska</li>
+        <li>$70,000 salary after tax in Alaska</li>
+        <li>$100,000 salary after tax in Alaska</li>
+      </ul>
+
+      <p>
+        Actual results may vary depending on filing status, deductions, benefits,
+        payroll settings, and individual tax circumstances.
+      </p>
+    </section>
+
+    <section class="box">
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>Does Alaska have state income tax?</h3>
+      <p>
+        Alaska applies its own state income tax rules, and those rules affect
+        final take-home pay. This calculator uses a simplified state tax assumption to estimate net income.
+      </p>
+
+      <h3>Why is my Alaska take-home pay lower than my salary?</h3>
+      <p>
+        Gross salary is reduced by federal taxes, payroll taxes, and state tax rules.
+        That is why net pay is lower than the salary number shown in a job offer.
+      </p>
+
+      <h3>Is this Alaska salary calculator accurate?</h3>
+      <p>
+        This calculator is designed for estimation and salary comparison.
+        Actual withholding may differ depending on deductions, credits, benefits,
+        and employer payroll calculations.
+      </p>
+    </section>
+
+    <section class="box">
+      <h2>Explore Related State Pages</h2>
+
+      <div class="quick-links">
+<a href="california-salary-after-tax-calculator.html">California</a>
+        <a href="texas-salary-after-tax-calculator.html">Texas</a>
+        <a href="florida-salary-after-tax-calculator.html">Florida</a>
+        <a href="new-york-salary-after-tax-calculator.html">New York</a>
+        <a href="illinois-salary-after-tax-calculator.html">Illinois</a>
+        <a href="georgia-salary-after-tax-calculator.html">Georgia</a>
+        <a href="washington-salary-after-tax-calculator.html">Washington</a>
+        <a href="states.html">All States</a>
+      </div>
+    </section>
+
+    <p class="note">
+      Disclaimer: This page provides estimated salary after tax information for general informational purposes only.
+      It should not be considered legal, financial, or tax advice.
+    </p>
+
+  </div>
+
+<script>
+function calculate() {
+  const salary = parseFloat(document.getElementById("salary").value);
+  const status = document.getElementById("status").value;
+  const output = document.getElementById("output");
+
+  if (!salary || salary <= 0) {
+    output.innerHTML = "Please enter a valid salary amount.";
+    return;
+  }
+
+  const federalTaxRate = status === "single" ? 0.22 : 0.18;
+  const federalTax = salary * federalTaxRate;
+  const stateTax = salary * 0.0;
+  const netAnnual = salary - federalTax - stateTax;
+  const netMonthly = netAnnual / 12;
+
+  output.innerHTML =
+    "Estimated Federal Tax: $" + federalTax.toFixed(2) + "<br>" +
+    "Estimated State Tax: $" + stateTax.toFixed(2) + "<br>" +
+    "Estimated Annual Take-Home Pay: $" + netAnnual.toFixed(2) + "<br>" +
+    "Estimated Monthly Take-Home Pay: $" + netMonthly.toFixed(2);
+}
+</script>
 
 </body>
 </html>
